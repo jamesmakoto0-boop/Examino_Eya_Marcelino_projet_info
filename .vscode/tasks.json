@@ -1,0 +1,64 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Installer extensions VSCode",
+            "type": "shell",
+            "windows": {
+                "command": "code  --install-extension twxs.cmake-0.0.17.vsix --install-extension ms-vscode.cmake-tools-1.19.48.vsix --install-extension ms-vscode.cpptools-1.22.0@win32-x64.vsix --install-extension ms-vscode.cpptools-themes-2.0.0.vsix"
+            },
+            "linux": {
+                "command": ""
+            },
+            "osx": {
+                "command": ""
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/extensions"
+            },
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "Set Git Username and Email",
+            "type": "shell",
+            "isBackground": true,
+            "problemMatcher": [],
+            "linux": {
+                "command": "git config --local user.name '${input:username}' && git config --local user.email '${input:email}'",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                    }
+            },
+            "osx": {
+                "command": "git config --local user.name '${input:username}' && git config --local user.email '${input:email}'",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                    }
+            },
+            "windows": {
+                "command": "git config --local user.name '${input:username}'; git config --local user.email '${input:email}'",
+                    "options": {
+                        "cwd": "${workspaceRoot}"
+                        }
+            }
+        }
+    ],
+    "inputs": [
+        {
+        "id": "username",
+        "type": "promptString",
+        "description": "Enter your Git username",
+        "default": "Your Name"
+        },
+        {
+        "id": "email",
+        "type": "promptString",
+        "description": "Enter your Git email",
+        "default": "you@example.com"
+        }
+    ]
+}

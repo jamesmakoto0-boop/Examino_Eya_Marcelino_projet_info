@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "ms-ceintl.vscode-language-pack-fr",
+        "ms-vscode.cpptools",
+        "bierner.markdown-preview-github-styles",
+        "ms-vscode.cmake-tools",
+        // "vadimcn.vscode-lldb",
+        "ms-vsliveshare.vsliveshare"
+    ]
+}
